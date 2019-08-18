@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1366</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>simpleGraph</string>
+  </property>
+  <property name="toolTip">
+   <string>A tool for plotting tabulated data.</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>1361</width>
+      <height>741</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QTabWidget" name="majorTabs">
+       <property name="toolTip">
+        <string extracomment="Selects the currently viewable tab."/>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="graphTab">
+        <attribute name="title">
+         <string>Graph</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>The tab that shows the graph of the current data.</string>
+        </attribute>
+        <widget class="MatplotlibWidget" name="graphingWidget">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>961</width>
+           <height>711</height>
+          </rect>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QWidget" name="gridLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>970</x>
+           <y>0</y>
+           <width>381</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="majorButtonsLayout">
+          <item row="1" column="1">
+           <widget class="QPushButton" name="clearDataButton">
+            <property name="toolTip">
+             <string extracomment="Clears all data currently displayed on the graph."/>
+            </property>
+            <property name="text">
+             <string>Clear Data</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="plotDataButton">
+            <property name="toolTip">
+             <string extracomment="Plots the currently selected data."/>
+            </property>
+            <property name="text">
+             <string>Plot Data</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="saveImageButton">
+            <property name="toolTip">
+             <string extracomment="Saves the current graph to an image."/>
+            </property>
+            <property name="text">
+             <string>Save to Image</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="text">
+             <string>PushButton</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="gridLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>970</x>
+           <y>70</y>
+           <width>381</width>
+           <height>187</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="graphSettingsLayout">
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="yMinEdit">
+            <property name="toolTip">
+             <string>Edits the minium value shown by the Y Axis.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="xMinEdit">
+            <property name="toolTip">
+             <string extracomment="Edits the minimum value shown by the X Axis."/>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Normal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="2">
+           <widget class="QLineEdit" name="yMaxEdit">
+            <property name="toolTip">
+             <string>Edits the maximum value shown by the Y Axis.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="xMaxEdit">
+            <property name="toolTip">
+             <string extracomment="Edits the maximum value shown by the X Axis."/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="xMinMaxLabel">
+            <property name="text">
+             <string>X Min/Max:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="yMinMaxLabel">
+            <property name="text">
+             <string>Y Min/Max:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="xAxisLabelLabel">
+            <property name="toolTip">
+             <string extracomment="Edits the label for the X Axis."/>
+            </property>
+            <property name="text">
+             <string>X Axis Label:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QCheckBox" name="showGridCheckBox">
+            <property name="toolTip">
+             <string extracomment="Displays the grid on the graph."/>
+            </property>
+            <property name="text">
+             <string>Show Grid</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QLabel" name="graphSettingsLabel">
+            <property name="text">
+             <string>Graph Settings:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1" colspan="2">
+           <widget class="QLineEdit" name="xAxisLabelEdit"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="graphTitleLabel">
+            <property name="toolTip">
+             <string extracomment="Edits the title of the graph."/>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="text">
+             <string>Graph Title:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1" colspan="2">
+           <widget class="QLineEdit" name="graphTitleEdit"/>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="yAxisLabelLabel">
+            <property name="toolTip">
+             <string extracomment="Edits the label for the graph Y axis."/>
+            </property>
+            <property name="text">
+             <string>Y Axis Label:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1" colspan="2">
+           <widget class="QLineEdit" name="yAxisLabelEdit"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="gridLayoutWidget_4">
+         <property name="geometry">
+          <rect>
+           <x>969</x>
+           <y>269</y>
+           <width>381</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="lineSettingsLayout">
+          <item row="2" column="0">
+           <widget class="QComboBox" name="lineColourDropDown">
+            <property name="toolTip">
+             <string extracomment="Edits the colour of the line."/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="lineStyleDropDown">
+            <property name="toolTip">
+             <string extracomment="Edits the style of the line."/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="lineSelectorDropDown">
+            <property name="toolTip">
+             <string extracomment="Selects which line will be configured."/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lineSelectorLabel">
+            <property name="text">
+             <string>Line to Edit:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="lineSettingsLabel">
+            <property name="text">
+             <string>Line Settings:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="dataTab">
+        <attribute name="title">
+         <string>Data Tab</string>
+        </attribute>
+        <attribute name="toolTip">
+         <string>The tab that shows the current data loaded into the software.</string>
+        </attribute>
+        <widget class="QWidget" name="verticalLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>10</y>
+           <width>951</width>
+           <height>691</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QTableWidget" name="tableWidget">
+            <property name="rowCount">
+             <number>22</number>
+            </property>
+            <property name="columnCount">
+             <number>9</number>
+            </property>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <row/>
+            <column/>
+            <column/>
+            <column/>
+            <column/>
+            <column/>
+            <column/>
+            <column/>
+            <column/>
+            <column/>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="gridLayoutWidget_5">
+         <property name="geometry">
+          <rect>
+           <x>970</x>
+           <y>10</y>
+           <width>381</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="importButtonsLayout">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="importDataButton">
+            <property name="toolTip">
+             <string extracomment="Selects the file to be imported into simpleGraph."/>
+            </property>
+            <property name="text">
+             <string>Import Data</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="exportDataButton">
+            <property name="toolTip">
+             <string extracomment="Exports the current data in simpleGraph to a file."/>
+            </property>
+            <property name="text">
+             <string>Export Data</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1366</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MatplotlibWidget</class>
+   <extends>QWidget</extends>
+   <header>matplotlibwidget</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
